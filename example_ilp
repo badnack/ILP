@@ -1,0 +1,12 @@
+take(chris,arch).
+take(chris,prog_lang).
+take(chris,os).
+
+take(brian,arch).
+take(brian,prog_lang).
+
+
+grad(X):- take(X,prog_lang),take(X,arch),take(X,os).
+
+nearGrad(A):- <=(grad(A), take(A, C)).
+nearGrad(A,C):- <=(grad(A), take(A, C)).

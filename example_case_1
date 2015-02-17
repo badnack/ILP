@@ -1,0 +1,21 @@
+take(matt, math101).
+take(matt, math102).
+
+take(bob, stat101).
+take(bob, stat102).
+
+stat(stat101).
+stat(stat102).
+math(math101).
+math(math102).
+
+level1(math101).
+level1(stat101).
+level2(math102).
+level2(stat102).
+
+grad(A):- take(A,Y), math(Y), level1(Y), take(A,Z),
+          math(Z), level2(Z).
+
+fixedgrad(X):- <=(grad(X), math(Y):-stat(Y)).
+fixedgrad(X, C):- <=(grad(X), math(C):-stat(C)).

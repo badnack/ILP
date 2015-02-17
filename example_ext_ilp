@@ -1,0 +1,13 @@
+take(matt, phys101).
+take(matt, math101).
+
+take(bob, phys101).
+take(bob, stat101).
+
+sci(phys101).
+stat(stat101).
+math(math101).
+
+grad(A):- take(A,X), sci(X), take(A,Y), math(Y).
+fixedgrad(X):- <=(grad(X), math(Y):-stat(Y)).
+fixedgrad(X, C):- <=(grad(X), math(C):-stat(C)).
